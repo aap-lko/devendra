@@ -95,6 +95,21 @@
     </style>
 
     <script>
+        window.onload = function() {
+        // Replace the URL with your API endpoint
+                var apiUrl = "https://script.google.com/macros/s/AKfycbzCuZ26hbYYVtWmIT4368itouFFM3NKmIj_2cto1VLzazHw8-Z0vMwfWyE6YaU1vTmnew/exec";
+
+                // Make an HTTP request to the API endpoint
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", apiUrl, true);
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    // Do something with the data returned from the API
+                    }
+                };
+                xhr.send();
+        };
         setTimeout(function () {
             document.getElementById('div1').style.opacity = '0';
             document.getElementById('div2').style.opacity = '1';
